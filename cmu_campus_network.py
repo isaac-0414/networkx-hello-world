@@ -70,7 +70,7 @@ end = 'Hunt Library'
 shortest_path =  nx.shortest_path(G, start, end)
 
 # YOUR CODE HERE: Use nx.shortest_path_length() to find the walking time
-walking_time = nx.shortest_path_length(G, start, end)
+walking_time = nx.shortest_path_length(G, start, end, weight="weight")
 
 print(f"\nShortest route from {start} to {end}:")
 print(f"  Route: {' -> '.join(shortest_path)}")
@@ -143,7 +143,7 @@ print(nx.all_simple_paths(G, start, end))
 print("\n2. What if Wean Hall is closed for construction?")
 G.remove_nodes_from('Wean Hall')
 shortest_path =  nx.shortest_path(G, start, end)
-walking_time = nx.shortest_path_length(G, start, end)
+walking_time = nx.shortest_path_length(G, start, end, weight="weight")
 
 print(f"  Recalculated Route: {' -> '.join(shortest_path)}")
 print(f"  Recalculated shortest walking time: {walking_time} minutes")
